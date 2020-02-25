@@ -1,18 +1,7 @@
 {
-    "_id": {
-        "$hash": {
-            "casing": "upper",
-            "length": 15
-        }
-    },
-    "referencia": {
-        "$hash": {
-            "casing": "upper",
-            "length": 5
-        }
-    },
+    "referencia": {"$integer": {"min": 9999999,"max": 99999999 }},
     "modelo":{"$integer": {"min": 9999999,"max": 99999999 }},
-    "ean":{"$integer": {"min": 100000000000000,"max": 999999999999999 }},
+    "ean13":{"$integer": {"min": 100000000000000,"max": 999999999999999 }},
     "color": {"$integer": {"min": 0,"max": 99 }},
     "talla": {"$integer": {"min": 10,"max": 60 }},
     "tienda": {
@@ -32,7 +21,6 @@
                 ]
             }
         },
-        "variacion": "",
         "detalles": {
             "$choose": {
                 "from": [

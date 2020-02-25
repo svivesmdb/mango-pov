@@ -5,24 +5,6 @@ class MongoDBAtlasRFID {
     this.epcs = this.db.collection("epcs");
   }
 
-  getEpcByCode(code) {
-    return this.epcs.find({'referencia':code}).toArray();
-  };
-
-  getEpcs(talla = null, color = null, ubicacion = null) {
-    var filters = {}
-    if (talla) {
-      filters.talla = talla;
-    }
-    if (color) {
-      filters.color = color;
-    }
-    if (ubicacion) {
-      filters.tienda.ubicacion = ubicacion;
-    }
-    return this.epcs.find(filters).toArray();
-  };
-
   //////////////
 
   getCatalog(talla = null, color = null, ubicacion = null) {
@@ -39,25 +21,6 @@ class MongoDBAtlasRFID {
     return this.epcs.find(filters).toArray();
   };
 
-
-  getStock(tienda, modelo, talla = null, color = null) {
-    var filters = {}
-    filters.referencia = modelo;
-    filters.tienda.detalles.id = tienda;
-    if (talla) {
-      filters.talla = talla;
-    }
-    if (color) {
-      filters.color = color;
-    }
-    if (ubicacion) {
-      filters.tienda.ubicacion = ubicacion;
-    }
-
-    return this.epcs.find(filters).toArray();
-  }
-
-
   getCatalog(reference, color = null) {
     var filters = {}
     if (talla) {
@@ -70,27 +33,6 @@ class MongoDBAtlasRFID {
     return this.epcs.find(filters).toArray();
   };
 
-  
-  getCatalogByEan(talla = null, color = null, ubicacion = null) {
-    var filters = {}
-    if (talla) {
-      filters.talla = talla;
-    }
-    if (color) {
-      filters.color = color;
-    }
-    if (ubicacion) {
-      filters.tienda.ubicacion = ubicacion;
-    }
-    return this.epcs.find(filters).toArray();
-  };
-
-
-
-
-
-
-  
   getStock(tienda, modelo, talla = null, color = null, ubicacion = null) {
  
     var match = {
@@ -134,7 +76,6 @@ class MongoDBAtlasRFID {
     var pipe = [ match_stage, group_stage ];
     
     return this.epcs.aggregate(pipe, []).toArray();
-
   }
 }
 

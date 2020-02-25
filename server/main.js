@@ -8,7 +8,7 @@ const app = express()
 const port = 3000
 
 // Connection URL
-const url = 'mongodb+srv://mango:mangopovpass2020@myatlascluster-izhs1.gcp.mongodb.net/test?retryWrites=true&w=majority'
+const url = 'mongodb+srv://mango:mangopovpass2020@mangopov-izhs1.mongodb.net/test?retryWrites=true&w=majority'
 const dbName = 'mango';
 
 // Create a new MongoClient
@@ -16,6 +16,7 @@ const client = new MongoClient(url,{useUnifiedTopology: true});
 
 // Use connect method to connect to the Server
 client.connect(function(err) {
+  
   assert.equal(null, err);
 
   console.log("Connected successfully to MongoDB server...");
@@ -27,9 +28,9 @@ client.connect(function(err) {
   //  - Color y ubicacion opcional.
   //  - Granularidar maxima, de este modelo, talla y color en el almacén
   // localhost:3000/stock/2/1283746/ -> base, required
-  // localhost:3000/stock/2/1283746/XL
-  // localhost:3000/stock/2/1283746/XL/11
-  // localhost:3000/stock/2/1283746/XL/11/ShopFloor
+  // localhost:3000/stock/2/1283746/40
+  // localhost:3000/stock/2/1283746/40/11
+  // localhost:3000/stock/2/1283746/40/11/ShopFloor
   app.get('/stock/:tienda/:modelo?/:talla?/:color?/:ubicacion?', function (req, res) {
     atlas_rfid.getStock(req.params.tienda, req.params.modelo, req.params.talla, req.params.color, req.params.ubicacion).then((r) => {
       return res.send(r);
@@ -44,5 +45,6 @@ client.connect(function(err) {
     });
   })
 
-  app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+  app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
 });

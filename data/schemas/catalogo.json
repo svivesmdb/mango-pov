@@ -1,7 +1,66 @@
 {
-    "linea":"",
-    "modelo":"",
-    "":8 numeros,
-    "eans":[""],
-    "":""
+    "referencia": {
+        "$integer": {
+            "min": 9999999,
+            "max": 99999999
+        }
+    },
+    "color": {
+        "$integer": {
+            "min": 0,
+            "max": 99
+        }
+    },
+    "ean13": {
+        "$integer": {
+            "min": 1000000000000,
+            "max": 10000000000000
+        }
+    },
+    "modelo": {
+        "$integer": {
+            "min": 9999999,
+            "max": 99999999
+        }
+    },
+    "names": [
+        {
+            "iso": "en",
+            "name": "JACKET BERRY"
+        },
+        {
+            "iso": "cn",
+            "name": "JACKET BERRY"
+        },
+        {
+            "iso": "ru",
+            "name": "JACKET BERRY"
+        },
+        {
+            "iso": "es",
+            "name": "CAZADORA BERRY"
+        }
+    ],
+    "description": [
+        {
+            "iso": "en",
+            "name": "Casual line. Short design. Beige. Denim style cotton fabric. Classic collar. Two flap pockets with button on the front. Two side pockets. Long sleeve. Buttoned cuffs. Button closure."
+        },
+        {
+            "iso": "cn",
+            "name": "Línia casual. Disseny curt. Color beix. Teixit de cotó estil denim. Coll clàssic. Dues butxaques de solapa amb botó a la part davantera. Dues butxaques laterals. Màniga llarga. Punys botonats. Tanca de botons."
+        },
+        {
+            "iso": "ru",
+            "name": "Повседневная линия. Короткий дизайн. Бежевый. Джинсовая ткань из хлопка. Классический воротник. Два откидных кармана с кнопкой на передней панели. Два боковых кармана. Длинный рукав Манжеты на пуговицах. Кнопка закрытия."
+        },
+        {
+            "iso": "es",
+            "name": "Línea casual. Diseño corto. Color beige. Tejido de algodón estilo denim. Coll clásico. Dos bolsillos de solapa con botón en la parte delantera. Dos bolsillos laterales. Manga larga. Puños abotonados. Cierre de botones."
+        }
+    ],
+    "images": [
+        "st.mngbcn.com/rcs/pics/static/T6/fotos/S20/67013255_09.jpg",
+        "st.mngbcn.com/rcs/pics/static/T6/fotos/S20/67013255_09_D2.jpg"
+    ]
 }
