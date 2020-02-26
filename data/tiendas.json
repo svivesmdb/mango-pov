@@ -1,0 +1,117 @@
+{
+    "id":1,
+    "name": "Glories",
+    "City": "Barcelona",
+    "Country": "Spain",
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            2.191384,
+            41.406001
+        ]
+    }
+}
+{
+    "id":2,
+    "name": "Rambla Catalunya",
+    "City": "Barcelona",
+    "Country": "Spain",
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            2.160970,
+            41.393097
+        ]
+    }
+}
+{
+    "id":3,
+    "name": "Passeig de gracia",
+    "City": "Barcelona",
+    "Country": "Spain",
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            2.163142,
+            41.393157
+        ]
+    }
+}
+{
+    "id":4,
+    "name": "Plaça Espanya",
+    "City": "Barcelona",
+    "Country": "Spain",
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            2.149036,
+            41.376262
+        ]
+    }
+}                 
+{
+    "id":5,
+    "name": "Fuencarral",
+    "City": "Madrid",
+    "Country": "Spain",
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            -3.701314,
+            40.420402
+        ]
+    }
+}
+{
+    "id":6,
+    "name": "Paseo Independencia",
+    "City": "Zaragoza",
+    "Country": "Spain",
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            -0.881821,
+            41.650803
+        ]
+    }
+}
+{
+    "id":7,
+    "name": "Rivoli",
+    "City": "Paris",
+    "Country": "France",
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            2.350401,
+            48.857965
+        ]
+    }
+}
+{
+    "id":8,
+    "name": "Dubai Mall",
+    "City": "Dubai",
+    "Country": "United Arab Emirates",
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            55.277963,
+            25.197247
+        ]
+    }
+}
+{
+    "id":9,
+    "name": "Mango Datong",
+    "City": "Taipei",
+    "Country": "Taiwan",
+    "location": {
+        "type": "Point",
+        "coordinates": [
+            121.313850,
+            24.989691
+        ]
+    }
+}

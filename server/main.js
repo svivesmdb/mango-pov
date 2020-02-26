@@ -27,20 +27,47 @@ client.connect(function(err) {
   //  - Tienda y modelo necesario
   //  - Color y ubicacion opcional.
   //  - Granularidar maxima, de este modelo, talla y color en el almacén
-  // localhost:3000/stock/2/1283746/ -> base, required
-  // localhost:3000/stock/2/1283746/40
-  // localhost:3000/stock/2/1283746/40/11
-  // localhost:3000/stock/2/1283746/40/11/ShopFloor
-  app.get('/stock/:tienda/:modelo?/:talla?/:color?/:ubicacion?', function (req, res) {
-    atlas_rfid.getStock(req.params.tienda, req.params.modelo, req.params.talla, req.params.color, req.params.ubicacion).then((r) => {
+  // localhost:3000/stock/tda00001/13033008/ -> base, required
+  // localhost:3000/stock/tda00001/13033008
+  // localhost:3000/stock/tda00001/13033008/15
+  // localhost:3000/stock/tda00001/13033008/15/Almacén
+  //app.get('/stock/:tienda/:modelo?/:talla?/:color?/:ubicacion?', function (req, res) {
+  app.get('/stock/:tienda/:modelo?/:color?/:ubicacion?', function (req, res) {
+    atlas_rfid.getStock(req.params.tienda, req.params.modelo, /*req.params.talla,*/ req.params.color, req.params.ubicacion).then((r) => {
       return res.send(r);
     });
   });
 
+
+  // Ver el estado de un EAN
+  // localhost:3000/ean/842790702300
+    app.get('/ean/:ean', function (req, res) {
+      atlas_rfid.getByEan(req.params.ean).then((r) => {
+        return res.send(r);
+      });
+    });
+
+  // Ver el estado de un EPC
+  // localhost:3000/ean/EPC1
+  app.get('/epc/:epc', function (req, res) {
+    atlas_rfid.getByEpc(req.params.epc).then((r) => {
+      return res.send(r);
+    });
+  });
+    
+    
   // Dado un id del catalogo, obtener la información del mismo.
-  // localhost:3000/catalog/13033008/
-  app.get('/catalog/:reference', function (req, res) {
-    atlas_rfid.getCatalog(req.params.reference, req.params.color).then((r) => {
+  // localhost:3000/catalog_ref/33100847/
+  app.get('/catalog_ref/:reference', function (req, res) {
+    atlas_rfid.getCatalogByReference(req.params.reference).then((r) => {
+      return res.send(r);
+    });
+  })
+
+    // Dado un id del catalogo, obtener la información del mismo.
+  // localhost:3000/catalog_ean/331008479998/
+  app.get('/catalog_ean/:ean13', function (req, res) {
+    atlas_rfid.getCatalogByEan(req.params.ean13).then((r) => {
       return res.send(r);
     });
   })
